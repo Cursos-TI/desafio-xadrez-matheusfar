@@ -6,16 +6,16 @@
 
 int main() {
 
-    int t = 0;
-    int b = 0;
-    int r = 0;
+    printf("============= BEM VINDO AO JOGO DE XADREZ =============\n");
+
+    int torre = 5;
 
     //Mover a torre 5 casas para a direita
     printf("\n");
     printf(" ==== MOVIMENTO TORRE ==== \n");
     printf("\n");
 
-    for (int t = 0; t < 5; t++){    
+    for (int i = 0; i < torre; i++){    
         printf("Direita\n"); // Imprime a direção do movimento 
     }
 
@@ -24,11 +24,12 @@ int main() {
     printf(" ==== MOVIMENTO BISPO ==== \n");  
     printf("\n");
 
+    int bisbo = 5;
 
-    while (b < 5)
+    while (bisbo--)
     {
         printf("Cima, Direita\n"); // Imprime a direção do movimento
-        b++;
+        
     }
     
     //Mover Rainha 8 casas para a esquerda
@@ -36,14 +37,38 @@ int main() {
     printf(" ==== MOVIMENTO RAINHA ==== \n");
     printf("\n");
 
+    int rainha = 8;
+    int i = 0;
+
     do {
 
         printf("Esquerda\n"); // Imprime a direção do movimento
-        r++;
+        i++;
+
+    }while(i < rainha);
 
 
-    }while(r < 8);
+    //Mover cavalo duas casas para baixo e uma para esquerda
+    printf("\n");
+    printf(" ==== MOVIMENTO CAVALO ====\n");
+    printf("\n");
 
+    printf("__________________________________________________________\n\n");
+
+    int cavalo = 1;
+
+    while (cavalo--)
+    {
+        for(int i = 0; i < 2; i++){
+            printf("Baixo\n"); // Imprime duas casas para baixo 
+        }
+
+        printf("Esquerda"); //Imprime uma casa para esquerda
+
+    }
+
+    printf("\n\n");
+    
 
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
