@@ -5,7 +5,6 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 
-
 // Função recursiva para imprimir o movimento da torre 5 casas para direita
 void movimentoTorre(int casas){
 
@@ -79,14 +78,14 @@ int main() {
     while (cavalo--)  //Faz o decremento da variavel cavalo que controla o loop externo
     {
 
-        for(int i = 0, j = 0; i < 3 && j < 3; i++ , j++){
+        for(int i = 0, j = 0; i <= 2 && j <= 2; i++ , j++){
              
             if(i < 2){
                 printf("Cima \n"); // Imprime o movimento duas casas cima
                 continue;
              }   
 
-             if(j > 1){
+             if(j == 2){
                 printf("Direita \n"); // Imprime o movimento uma casa para direita
                 break;
              }
