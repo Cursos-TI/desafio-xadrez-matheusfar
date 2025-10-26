@@ -4,69 +4,97 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+
+
+// Função recursiva para imprimir o movimento da torre 5 casas para direita
+void movimentoTorre(int casas){
+
+    if (casas > 0){
+        printf("Direita\n"); // Imprime a direção do movimento 
+        movimentoTorre(casas - 1); // Chama a si mesma com casas - 1
+    }
+}
+
+//Função recursiva para imprimir o movimento do bispo 5 casa para cima e para diereita
+void movimentoBispo(int casas){
+
+    if (casas > 0){
+        for(int i = 0; i < 1; i++){
+            printf("Cima, "); // Imprime a direção do movimento
+            for(int j = 0; j < 1; j++){
+                printf("Direita\n"); // Imprime a direção do movimento
+            }
+            movimentoBispo(casas - 1);//Chama a si mesma com casas - 1 
+        }
+    }
+}
+
+//Função recursiva para imprimir o movimento da rainha 8 casas para esquerda
+void movimentoRainha(int casas){
+
+    if(casas > 0){
+        printf("Esquerda\n");//Imprime a direção do movimento
+        movimentoRainha(casas - 1);//Chama a si mesmo com casas - 1 
+    }
+}
+
+
 int main() {
 
     printf("============= BEM VINDO AO JOGO DE XADREZ =============\n");
 
-    int torre = 5;
-
-    //Mover a torre 5 casas para a direita
     printf("\n");
     printf(" ==== MOVIMENTO TORRE ==== \n");
     printf("\n");
 
-    for (int i = 0; i < torre; i++){    
-        printf("Direita\n"); // Imprime a direção do movimento 
-    }
+    //Mover o Torre 5 casas para direita
+    movimentoTorre(5);// Chamada da função recursiva
 
-    //Mover o bisbo 5 casas para para cima é a direita
+    
     printf("\n");
     printf(" ==== MOVIMENTO BISPO ==== \n");  
     printf("\n");
 
-    int bisbo = 5;
-
-    while (bisbo--)
-    {
-        printf("Cima, Direita\n"); // Imprime a direção do movimento
-        
-    }
+    //Mover o Bisbo 5 casas para cima é a direita
+    movimentoBispo(5); //Chamada da função recursiva
     
-    //Mover Rainha 8 casas para a esquerda
+  
     printf("\n");
     printf(" ==== MOVIMENTO RAINHA ==== \n");
-    printf("\n");
+    printf("\n");    
 
-    int rainha = 8;
-    int i = 0;
-
-    do {
-
-        printf("Esquerda\n"); // Imprime a direção do movimento
-        i++;
-
-    }while(i < rainha);
+    //Mover Rainha 8 casas para esquerda
+    movimentoRainha(8);//Chamada da função recursiva
 
 
-    //Mover cavalo duas casas para baixo e uma para esquerda
     printf("\n");
     printf(" ==== MOVIMENTO CAVALO ====\n");
     printf("\n");
 
     printf("__________________________________________________________\n\n");
-
+   
+    //Mover cavalo 2 casa para cima e 1 para direita
     int cavalo = 1;
-
-    while (cavalo--)
+ 
+    while (cavalo--)  //Faz o decremento da variavel cavalo que controla o loop externo
     {
-        for(int i = 0; i < 2; i++){
-            printf("Baixo\n"); // Imprime duas casas para baixo 
+
+        for(int i = 0, j = 0; i < 3 && j < 3; i++ , j++){
+             
+            if(i < 2){
+                printf("Cima \n"); // Imprime o movimento duas casas cima
+                continue;
+             }   
+
+             if(j > 1){
+                printf("Direita \n"); // Imprime o movimento uma casa para direita
+                break;
+             }
         }
-
-        printf("Esquerda"); //Imprime uma casa para esquerda
-
+        
     }
-
+    
+    printf("__________________________________________________________\n");
     printf("\n\n");
     
 
